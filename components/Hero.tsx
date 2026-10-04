@@ -38,7 +38,7 @@ export const Hero = () => {
             />
             <TextSubHeading
                 className="text-center md:tracking-wider mb-4 text-xs md:text-lg lg:text-xl "
-                words="A developer turning code into reality."
+                words="Software engineer. Builder. Problem solver."
             />
 
             <a href="/resume">

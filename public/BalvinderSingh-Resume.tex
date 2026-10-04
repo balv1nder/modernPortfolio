@@ -1,299 +1,93 @@
-%-------------------------
-% Resume in Latex
-% Author : Matty
-% Based on: https://github.com/jakegut/resume (which was itself based on https://github.com/sb2nov/resume)
-% License : MIT
-%------------------------
-
-\documentclass[letterpaper,11pt]{article}
-
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[a4paper,top=0.9cm,bottom=0.8cm,left=1.4cm,right=1.4cm]{geometry}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{xcolor}
 \usepackage{fontawesome5}
-\usepackage{hyperref}
-% \usepackage{geometry}
-\input{glyphtounicode}
 
-% -------------------- FONT OPTIONS --------------------
-% sans-serif
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% serif
-% \usepackage{charter}
+\definecolor{accent}{RGB}{34,74,128}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.0}
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\titleformat{\section}{\color{accent}\bfseries\large\scshape}{}{0pt}{}[\vspace{-6pt}{\color{accent}\rule{\linewidth}{0.6pt}}]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-1in} % Default was -.5in
-\addtolength{\textheight}{1.0in}
+\setlist[itemize]{leftmargin=1.1em,itemsep=0pt,parsep=0pt,topsep=1pt,label=\textbullet}
 
-\urlstyle{same}
-
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Section formatting
-\titleformat{\section}{
-  \vspace{-5pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-% Subsection formatting
-\titleformat{\subsection}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
-
-% -------------------- CUSTOM COMMANDS --------------------
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\setlength{\footskip}{4.08003pt}
-
-% -------------------- START OF DOCUMENT --------------------
+% \entry{Left bold}{right}  -- one line with right-aligned date/location
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+% \subentry{italic left}{right}
+\newcommand{\subentry}[2]{\textit{#1}\hfill #2\par}
+\newcommand{\note}[1]{{\small\textit{#1}}\par}
 \begin{document}
 
-% -------------------- HEADING--------------------
-\begin{flushright}
-
-\end{flushright}
-
-\vspace{-5pt}
-
-W\begin{center}
-    \textbf{\Huge \scshape Balvinder Singh} \\ \vspace{8pt}
-    \small 
-    \faIcon{github}
-    \href{https://github.com/balvind3r}{\underline{balvind3r}} $  $
-    \faIcon{code}
-    \href{https://www.balvinder.co}
-    {\underline{balvinder.co}} $  $
-    \faIcon{linkedin}
-    \href{https://linkedin.com/in/balvind3rsingh}{\underline{balvind3rsingh}} $  $
-    \faIcon{envelope}
-    \href{mailto:balvindersingh485280@gmail.com}
-    {\underline{balvindersingh485280@gmail.com}}
+\begin{center}
+{\LARGE\bfseries BALVINDER SINGH}\\[3pt]
+{\large\color{accent}\textbf{Software Engineering Intern -- Backend Systems \& Applied AI}}\\[3pt]
+\colorbox{accent!10}{\small\textbf{6-month internship from May 2027} \;|\; MSc AI, CentraleSup\'elec (graduating Dec.\ 2027)}\\[3pt]
+\small Paris, France \;|\; +33-752910392 \;|\; \href{mailto:sbalvinder.fr@gmail.com}{sbalvinder.fr@gmail.com} \;|\; \href{https://linkedin.com/in/balvind3rsingh}{linkedin.com/in/balvind3rsingh} \;|\; \href{https://github.com/balv1nder}{github.com/balv1nder}
 \end{center}
 
-% -------------------- EDUCATION --------------------
+\section{Profile}
+MSc Artificial Intelligence student at CentraleSupélec with 1.5+ years at OYO, building backend services and internal tools for hotels in Europe, UK, USA and the UAE. Experienced in managing scalable distributed backend systems and co-author of two IEEE papers applying LLMs, retrieval-augmented generation (RAG) and machine learning to healthcare and cybersecurity. Looking for
+a 5–6 month internship from May 2027 to build reliable, scalable software and AI-powered features.
+
+\section{Experience}
+\entry{OYO (Oravel Stays)}{Gurugram, India}
+\subentry{Associate Software Development Engineer}{Aug.\ 2025 -- Sep.\ 2026}
+\begin{itemize}
+  \item Designed and deployed backend REST APIs for automated smart-lock and room-upsell products in the UK and UAE, streamlining check-in and contributing to a 15\% increase in property revenue.
+  \item Built an end-to-end digital check-in system that replaces front-desk check-in with a self-service guest flow; projected operational savings of over \$1M per year.
+  \item Developed in-house dashboards for the Motel 6 management system, reducing operational costs and improving reliability; team \textit{Building Block Award} for supporting the Motel 6 (USA) acquisition, and handling critical on-call issues.
+\end{itemize}
+\subentry{Software Engineering Intern}{Jan.\ 2025 -- Jul.\ 2025}
+\begin{itemize}
+  \item Led projects to streamline hotel onboarding and financial contracting on the OYO 360 platform for 1,000+ hotels across Europe (Belvilla, DanCenter, CheckMyGuest); improved operational efficiency by 30\%.
+  \item Owned month-end closure and year-end audit processes for merchant payouts across several countries, ensuring accurate settlement and reconciliation.
+\end{itemize}
+\vspace{2pt}
+\entry{Information Technology Intern \textnormal{| Mahindra Logistics (Mahindra Group)}}{Mumbai, India \;|\; Feb.\ 2024 -- Apr.\ 2024}
+\begin{itemize}
+  \item Cut API response time from 50+ s to $\sim$500 ms (100$\times$ faster) on the LogiPulse KPI-monitoring system by adding Redis caching, optimising SQL queries and redesigning APIs.
+  \item Redesigned the operator interface, reducing task time by $\sim$80\%; 1st place among 200+ teams at the National Catapult Techathon for KPI-monitoring workflows used across 1,000+ warehouses.
+\end{itemize}
+
+\section{Projects \& Publications}
+\entry{Pulse -- distributed, rate-limited API service \textnormal{| Go, Redis, Docker, Prometheus, k6}}
+{\href{https://github.com/balv1nder/pulse}{\faGithub} \;|\; Oct.\ 2026}
+\begin{itemize}
+  \item Built a horizontally scaled Go service: custom round-robin load balancer with health checks, three stateless API replicas, a distributed rate limiter (atomic Redis Lua script, verified with the race detector) and a cache-aside layer; Prometheus metrics and Docker Compose.
+  \item Load-tested with k6: p99 of 8\,ms at 1,500 req/s; identified the load balancer as the shared bottleneck and diagnosed a cascading failure caused by health-check timeouts under overload.
+\end{itemize}
+\entry{LLM-based clinical decision support\textnormal{ | Google AI for Impact Finalist | IEEE ICDLT (paper presented)}}{Nov.\ 2025}
+\begin{itemize}
+  \item Built a hybrid RAG pipeline (AWS Textract OCR $\rightarrow$ BioBERT embeddings in Pinecone $\rightarrow$ Gemini 1.5) for differential-diagnosis support, with dual-persona prompting and rolling summarisation to fit long patient histories in context.
+\end{itemize}
+\entry{Botnet attack detection for IoT devices \textnormal{| IEEE TENSYMP (paper presented)}}{Sep.\ 2024}
+\begin{itemize}
+  \item Stacking ensemble with time-window feature engineering on N-BaIoT to classify Mirai and BASHLITE attacks on low-resource devices; 99.98\% binary accuracy.
+\end{itemize}
+
 \section{Education}
-  \resumeSubHeadingListStart
-  
-    \resumeSubheading
-      {Netaji Subhas University of Technology}{June 2025}
-      {B. Tech in Computer Science with Specialisation in AI}{}
-      
-    \vspace{4pt}
+\entry{MSc in Artificial Intelligence (M2, 60 ECTS) \textnormal{| CentraleSup\'elec -- Universit\'e Paris-Saclay}}{Sep.\ 2026 -- Dec.\ 2027}
+\note{Big data for AI, multi-agent systems, deep learning, trustworthy and explainable AI.}
+\entry{B.Tech in Computer Science \& Engineering (AI) \textnormal{| Netaji Subhas University of Technology}}{Dec.\ 2021 -- Dec.\ 2025}
+\note{CGPA 7.58/10. Coursework: Distributed Computing, Operating Systems, Database Management Systems, Data Structures \& Algorithms.}
 
-      \textbf{Courses:} Data Structures \& Algorithms, Discrete Math, \\ Web-Development, Probability \& Statistics, Object-Oriented Programming\\
-
-  \resumeSubHeadingListEnd
-
-  
-% -------------------- EXPERIENCE --------------------
-\section{Work Experience}
-  \resumeSubHeadingListStart
-
-          \resumeProjectHeading
-          {\textbf{Mahindra Logistics} $|$ \footnotesize\emph{SDE Intern}\vspace{8pt}}{Feb. 2024 -- April 2024}
-          \vspace{-16pt}
-          \resumeItemListStart
-            \resumeItem{Completely revamped LogiPulse - Mahindra's KPI monitoring software for warehouses}
-            \resumeItem{Developed user-friendly frontend using modern frameworks}
-            \resumeItem{Implemented industry-level practices for version control}
-          \resumeItemListEnd
-          \resumeProjectHeading
-          {\textbf{SSPS Global Pvt. Ltd.} $|$ \footnotesize\emph{Business Intern | Founder's Office}\vspace{8pt}}{June 2023 -- July 2023}
-          \vspace{-16pt}
-          \resumeItemListStart
-            \resumeItem{Worked alongside the CEO to understand and analyze the company's future prospects}
-            \resumeItem{Analysed company's expenditure to ensure positive cashflows}
-            \resumeItem{Prepared an exhaustive report for future expansions}
-          \resumeItemListEnd
-
-        % \subsection{Hobbies}
-          
-        %   \resumeProjectHeading
-        %   {\textbf{Playing the Drums}\vspace{8pt}}{2013 -- 2019}
-        %   {\small{Played the drums in symphonic, jazz, and marching bands}}
-
-        %   \resumeProjectHeading
-        %   {\textbf{3\textsuperscript{rd} Place Time Keeping Challenge Championship \footnotesize{(Time Keeping Assocation)}}\vspace{8pt}}{Feb. 2022 -- May 2022}
-        %   {\small{Won \$1500 nationally competing against high school students in counting seconds and minutes}}
-          
-    \resumeSubHeadingListEnd 
-    
-% -------------------- SKILLS --------------------
-
-% \section{Skills}
-% \vspace{-1em} % Adjust this value as needed to reduce the spacing
-% \begin{description}
-%     \item[Core Languages] C++ $|$ Python $|$ HTML $|$ JavaScript 
-%     \item[Web Development] React $|$ Next.Js $|$ TypeScript
-%     \item[Version Control] Git $|$ GitHub
-%     \item[Database Management] MySQL $|$ MongoDB
-% \end{description}
 \section{Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-    
-     \textbf{Languages}{: C/C++, Python, JavaScript/TypeScript, HTML/CSS, } \\
-     \textbf{Web Development}{: React.Js, Next.Js, RTK, TypeScript, ShadCN, Node.Js} \\
-     \textbf{Database Management}{: MySql, MongoDB} \\
-     \textbf{Version Control}{: Git, GitHub} 
-     
-     
-     % \textbf{Frameworks}{: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI} \\
-     
-     % \textbf{Libraries}{: pandas, NumPy, Matplotlib}
-     
-    }}
- \end{itemize}
-
-% -------------------- PROJECTS --------------------
-
-\section{Projects}
-    \resumeSubHeadingListStart
-          
-        \resumeProjectHeading
-        {\textbf{Gym-Fyt} $|$ \footnotesize\emph{Next.js, Material-UI, TypeScript, Tailwind | } \hfill \href{https://gym-fyt.vercel.app/}{\faIcon{external-link-alt} Visit Website}}{}
-        \resumeItemListStart
-            \resumeItem{Implemented an application to provide users with a comprehensive resource for finding specific exercises.}
-            \resumeItem{Integrated advanced search functionalities to reduce friction during exercise lookup, enhancing user experience.}
-            \resumeItem{Utilized Tailwind CSS for efficient styling and ensured cross-browser compatibility for seamless accessibility.}
-        \resumeItemListEnd
-          
-        \resumeProjectHeading
-        {\textbf{Portfolio Website} $|$ \footnotesize\emph{Next.js, Aceternity UI, TypeScript, Tailwind | } \hfill \href{https://www.balvinder.co}{\faIcon{external-link-alt} Visit Website}}{}
-        \resumeItemListStart
-            \resumeItem{Developed a personal portfolio website, focusing on clean design and smooth user interactions.}
-            \resumeItem{Implemented TypeScript for type safety and utilized Tailwind CSS for streamlined styling and responsiveness.}
-            \resumeItem{Deployed the site on Vercel with DNS hosting via Porkbun to ensure fast and reliable performance.}
-        \resumeItemListEnd
-
-        \resumeProjectHeading
-        {\textbf{LogiPulse} $|$ \footnotesize\emph{Next.js, TypeScript, MySQL, Node.js, React | } \hfill \href{https://inner-mll.vercel.app/}{\faIcon{external-link-alt} Visit Website}}{}
-        \resumeItemListStart
-            \resumeItem{Led the development of LogiPulse, an award-winning application created for the Mahindra Catapult Techathon.}
-            \resumeItem{Designed and implemented a robust workflow optimization tool for MLL Warehouses.}
-            \resumeItem{Adhered to industry-leading coding standards and practices to ensure scalability, maintainability, and performance.}
-        \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-% -------------------- ACHIEVEMENTS --------------------
-\section{Awards \& Achievements}
-    % \resumeSubHeadingListStart
-    \vspace{4pt}
-        \resumeItemListStart 
-            \resumeItem{Secured first postion in Mahindra Logistics Catapult Techathon.}
-            \vspace{-4pt}
-            \resumeItem{Among top 30 teams selected for Smart India Hackathon.}
-            \vspace{-4pt}
-            \resumeItem{Finalists in HackBVICAM, InnovateX Hackathon, HackNSUT \& SRMHacks.}
-            \vspace{-4pt}
-            % \resumeItem{Acted as contingent leader for E-Summit IIT Bombay 2024, won awards in multiple competitions.}
-            % \vspace{-4pt}
-            % \resumeItem{Secured first position in Pitch Perfect, Startup Pitching Competition organised by Incubation Cell, NSUT}
-            % \vspace{-4pt}
-            % \resumeItem{Secured second position in M\&A Masterminds, Case Study Competition organised by IIT Delhi}
-            \vspace{-4pt}
-          \resumeItemListEnd
-        
-    % \resumeSubHeadingListEnd
-
-% -------------------- RESEARCH PROJECT --------------------
-\section{Research Work}
-    \resumeSubHeadingListStart
-
-        \resumeProjectHeading
-        {\textbf{Recreating Squid Games} $|$ \footnotesize\emph{\href{https://drive.google.com/file/d/1KhE4Wl5HmfVdzCf_14reIOO5fKT5YGBn/view?usp=sharing}{Read Report}}}{}
-        \resumeProjectHeading
-        {\textbf{Detection of IoT Botnet Attacks using Deep Learning} $|$ \footnotesize\emph{\href{https://drive.google.com/file/d/1Qe7ZyMYZTeJYe5cmQNJJODE4oIyQ-e7t/view?usp=sharing}{Read Report}}}{}
-    
-    \resumeSubHeadingListEnd
-
-
-% -------------------- POR --------------------
-\section{Position of Responsibility}
-    % \resumeSubHeadingListStart
-
-    %     \resumeProjectHeading
-    %     {\textbf{Head Graphic Designer \& Society Outreach} $|$ \footnotesize\emph{e-Cell NSUT}}
-    %     % \resumeItemListStart
-    %     %     \resumeItem{Project for the Mahindra Catapult Techathon, achieved first position nationwide.}
-    %     %     \resumeItem{Developed an application to ease data entry operator's workflow employeed by one of the biggest corporation.}
-    %     %     \resumeItem{Learned to write code with leading industry standards.}
-    %     %   \resumeItemListEnd
-          
-    %     \resumeProjectHeading
-    %     {\textbf{Secretary} $|$ \footnotesize\emph{Finance & Economics Society, NSUT}}{}
-    %     \resumeItemListStart
-    %         \resumeItem{Team project for the HackBVICAM Hackathon, became the finalists.}
-    %         \resumeItem{Developed an application to provide healthcare for expecting mothers.}
-    %         \resumeItem{Learned how to integrate UI/UX designs to develop user-friendly application.}
-    %       \resumeItemListEnd
-    % \resumeSubHeadingListEnd
-
-    \vspace{4pt}
-        \resumeItemListStart 
-            \resumeItem{\textbf{Head Graphic Designer \& Society Outreach} $|$ \footnotesize\emph{e-Cell NSUT}}
-            \vspace{-4pt}
-            \resumeItem{\textbf{Secretary} $|$ \footnotesize\emph{Finance \& Economics Society, NSUT}}
-            \vspace{-4pt}
-            
-          \resumeItemListEnd
-
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Languages:} & Java, Python, C++, SQL, Go, JavaScript \\
+\textbf{Backend \& data:} & REST APIs, Microservices, Spring Boot, ActiveMQ, Redis, PostgreSQL, MySQL, MongoDB \\
+\textbf{Infra \& observability:} & Docker, Kubernetes, AWS, Prometheus, Git \\
+\textbf{AI / ML:} & Machine learning, Deep Learning, NLP, LLMs, RAG, Pinecone; AI Coding Assistants \\
+\textbf{Other:} & English C1 (IELTS 8.0), Hindi native, German A1 \;|\; LeetCode 1600+ \;|\; Top 10, Google APAC AI for Impact Hackathon \\
+\end{tabularx}
 
 \end{document}

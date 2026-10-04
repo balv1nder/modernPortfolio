@@ -1,12 +1,8 @@
 import Grid from "@/components/Grid";
 import { Hero } from "@/components/Hero";
-import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
-import Image from "next/image";
-import { FaHome } from "react-icons/fa";
 import "./globals.css";
-import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -16,25 +12,14 @@ export default function Home() {
         <div className="max-lg:hidden">
           <FloatingNav navItems={navItems} />
         </div>
-        {/* <div className="snap-proximity snap-y overflow-scroll"> */}
-        {/* <div className="snap-start"> */}
-        <div className="">
+        <div>
           <Hero />
         </div>
-        {/* <div className="snap-start lg:mt-14 mt-20"> */}
-        <div className=" lg:mt-14 mt-20">
+        <div className="lg:mt-14 mt-20">
           <Grid />
         </div>
-        {/* <div className="snap-start"> */}
-
-          <div>
-          <RecentProjects />
-        </div>
         <div>
-          <Experience/>
-        </div>
-        <div>
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </main>

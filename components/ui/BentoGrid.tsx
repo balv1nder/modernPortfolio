@@ -5,10 +5,15 @@ import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import { Globe } from "./Globe";
 import { GlobeDemo } from "./GridGlobe";
 import { IoCopyOutline } from "react-icons/io5";
-import Lottie from "react-lottie";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import animationData from "@/data/confetti.json";
 import { MagicButton } from "./MagicButton";
+import { techStack } from "@/data";
+
+// lottie-react wraps lottie-web, which touches `document` at import time and
+// breaks the server prerender. Load it on the client only.
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export const BentoGrid = ({
   className,
@@ -65,7 +70,7 @@ export const BentoGridItem = ({
 
   const handleCopy = () => {
     if (isClient && navigator.clipboard) {
-      navigator.clipboard.writeText("balvinders.pro@gmail.com");
+      navigator.clipboard.writeText("sbalvinder.fr@gmail.com");
       setCopied(true);
       setTimeout(() => {
         setCopied(false);
@@ -136,7 +141,7 @@ export const BentoGridItem = ({
           <div className={`${descClassName} font-sans text-[#c1c2d3]  z-10`}>
             {description}
           </div>
-          <div className={`${(id === 1)? "w-full mb-3 lg:mb-10 text-[#ececf0] lg:text-3xl text-base" :"max-w-96 lg:text-3xl text-lg"} font-sans font-bold z-10`}>
+          <div className={`${(id === 1)? "w-full mb-3 lg:mb-0 text-[#ececf0] lg:text-3xl text-base" :"max-w-96 lg:text-3xl text-lg"} font-sans font-bold z-10`}>
             {title}
           </div>
 
@@ -145,7 +150,7 @@ export const BentoGridItem = ({
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-5 lg:-right-2">
               <div className="flex flex-col gap-3 lg:gap-2">
-                {["React.js", "Next.js", "Typescript"].map((item) => (
+                {techStack.left.map((item) => (
                   <span
                     key={item}
                     className="py-2 lg:py-3 lg:px-2 px-3 text-xs lg:text-base  opacity-50 lg:opacity-85 rounded-lg text-center bg-[#10132E]"
@@ -157,7 +162,7 @@ export const BentoGridItem = ({
               </div>
               <div className="flex flex-col gap-3 lg:gap-2">
                 <span className="py-5 px-3  rounded-lg text-center bg-[#10132E]" />
-                {["AceternityUI", "Tailwind", "ShadCN"].map((item) => (
+                {techStack.right.map((item) => (
                   <span
                     key={item}
                     className="py-2 lg:py-3 lg:px-2 px-3 text-xs lg:text-base  opacity-50 lg:opacity-85 rounded-lg text-center bg-[#10132E]"
@@ -172,16 +177,13 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="mt-5 relative">
               <div className={`absolute -bottom-5 right-0`}>
-              {isClient && (
+                {isClient && copied && (
                   <Lottie
-                    key={copied ? 'copied' : 'not-copied'}
-                    options={{
-                      loop: copied,
-                      autoplay: copied,
-                      animationData: animationData,
-                      rendererSettings: {
-                        preserveAspectRatio: "xMidYMid slice",
-                      },
+                    animationData={animationData}
+                    loop={false}
+                    autoplay
+                    rendererSettings={{
+                      preserveAspectRatio: "xMidYMid slice",
                     }}
                   />
                 )}
