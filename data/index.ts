@@ -83,8 +83,21 @@ export const techStack = {
 };
 
 export const projects = [
-  {
+   {
     id: 1,
+    title: "AgentAudit — auditable LLM agent for financial queries",
+    des: "A Spring AI agent over a locally hosted LLM that answers portfolio-risk questions by invoking Java tools, with every run persisted to PostgreSQL as a session plus an ordered event log of tool calls, arguments and results, each correlated to its OpenTelemetry trace.",
+    highlights: [
+      "Recorded every tool call with its arguments and result; a data-not-found case returns HTTP 200 while the record shows the underlying TOOL_ERROR.",
+      "Caught the model asserting EUR 12M was higher than EUR 14M, reproducibly at temperature 0; the record isolated the fault to narration, not data.",
+      "Measured a prompt-based fix over three runs per arm: it did not correct the answer and added a tool round, visible only in the audit trail.",
+    ],
+    stack: ["Java", "Spring Boot", "Spring AI", "PostgreSQL", "OpenTelemetry", "Ollama"],
+    date: "Oct 2026",
+    link: "https://github.com/balv1nder/agent-audit",
+  },
+  {
+    id: 2,
     title: "Pulse — distributed, rate-limited API service",
     des: "A horizontally scaled Go service: custom round-robin load balancer with health checks, three stateless API replicas, a distributed rate limiter backed by an atomic Redis Lua script and a cache-aside layer, all wired to Prometheus.",
     highlights: [
@@ -97,7 +110,7 @@ export const projects = [
     link: "https://github.com/balv1nder/pulse",
   },
   {
-    id: 2,
+    id: 3,
     title: "Nord Buds 4 Pro — ANC control for macOS",
     des: "Reverse-engineered the OnePlus Nord Buds 4 Pro BLE protocol to switch ANC, Transparency and Off from macOS without the HeyMelody app.",
     highlights: [
